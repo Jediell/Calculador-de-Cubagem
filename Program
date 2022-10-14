@@ -1,0 +1,189 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	float largura, comprimento, bitola, cubagem, altura_caixa;
+	int  i = 0, cont_voltas = 0, quantidade_chapa, quantidade_caixa, cor_fonte;
+	
+	system("color f");
+	
+	while (i == 0){
+		
+		cont_voltas = 0;
+		
+		cout << "                              UTILIZE PONTO PARA CASAS DECIMAIS - NAO DIGITAR LETRAS" << endl;
+		cout << "                                            CdC - Calculo de Cubagem" << endl << endl;
+		cout << "                                              Calcular cubagem (1)";
+		cout << "\n                                  Calcular cubagem sem a quantidade de chapas (2)";
+		cout << "\n                                            Escolher cor da fonte (3)" << endl;
+		cout << "                                                        ";
+		cin >> i;
+		
+		system("cls");
+		
+		if (i != 1 && i != 2 && i != 3){
+			i = 0;
+			system("cls");
+		}
+		
+		while (i == 3){
+			
+			system("cls");
+			
+			cout << "                                               NAO DIGITAR LETRAS" << endl;
+			cout << "                                            CdC - Calculo de Cubagem" << endl << endl;
+			cout << "                                            Selecione a cor da fonte" << endl << endl;
+			cout << "                                            Branco  (1)     Azul (2)" << endl;
+			cout << "                                            Lilas   (3)     Roxo (4)" << endl;
+			cout << "                                            Amarelo (5) Vermelho (6)" << endl;
+			cout << "                                                        ";
+			
+			cin >> cor_fonte;
+			
+			if (cor_fonte == 1){
+				system("color f");
+			}
+			
+			if (cor_fonte == 2){
+				system("color 1");
+			}
+			
+			if (cor_fonte == 3){
+				system("color d");
+			}
+			
+			if (cor_fonte == 4){
+				system("color 5");
+			}
+			
+			if (cor_fonte == 5){
+				system("color 6");
+			}
+			
+			if (cor_fonte == 6){
+				system("color 4");
+			}
+			
+			system("cls");
+			i = 0;
+
+		}
+		
+	//Calcular quantas chapas na caixa
+	
+		while (i == 2){
+			
+			if (cont_voltas == 0){
+				
+				system("cls");
+				cout << "                                                 NAO DIGITAR LETRAS" << endl;
+				cout << "                                              CdC - Calculo de Cubagem" << endl << endl;
+			
+			}
+			
+			cout << "                                                     Largura: ";
+			cin >> largura;
+				
+			cout << "                                                   Comprimento: ";
+			cin >> comprimento;
+			
+			cout << "                                                     Bitola: ";
+			cin >> bitola;
+		
+			cout << "                                                Altura da caixa: ";
+			cin >> altura_caixa;
+			
+			cout << "                                              Quantidade de caixas: ";
+			cin >> quantidade_caixa;
+			
+			if (bitola < 1)
+				bitola = bitola * 100;
+			
+			quantidade_chapa = altura_caixa / bitola;
+			
+			if (bitola > 1)
+				bitola = bitola / 100;
+			
+			cubagem = (largura * comprimento * bitola * quantidade_chapa * quantidade_caixa) / 10;
+			
+			cout << endl << "                                              Cubagem: " << cubagem;
+		
+			cout << endl << endl << "                                              Continuar? \n                                              (1) Sim (2) Nao: ";
+			cin >> i;
+			
+			if (i == 2){
+				i = 0;
+				system("cls");
+			}
+			
+			else {
+			
+				cout << endl << endl;
+				i = 2;
+				cont_voltas++;
+			
+				if (cont_voltas >= 2){
+					system("cls");
+					cont_voltas = 0;
+				}
+			}
+			
+		}
+		
+		
+	//Cubagem com todos os dados
+		while (i == 1){
+		
+			if (cont_voltas == 0){
+				
+				system("cls");
+				cout << "                                                 NAO DIGITAR LETRAS" << endl;
+				cout << "                                              CdC - Calculo de Cubagem" << endl << endl;
+			
+			}
+		
+			cout << "                                                     Largura: ";
+			cin >> largura;
+		
+			cout << "                                                   Comprimento: ";
+			cin >> comprimento;
+			
+			cout << "                                                     Bitola: ";
+			cin >> bitola;
+		
+			cout << "                                               Quantidade de chapas: ";
+			cin >> quantidade_chapa;
+		
+			cout << "                                               Quantidade de caixas: ";
+			cin >> quantidade_caixa;
+			
+			if (bitola > 1)
+				bitola = bitola / 100;
+		
+			cubagem = (largura * comprimento * bitola * quantidade_chapa * quantidade_caixa) / 10;
+		
+			cout << endl << "                                              Cubagem: " << cubagem;
+		
+			cout << endl << endl << "                                              Continuar? \n                                              (1) Sim (2) Nao: ";
+			cin >> i;
+			
+			if (i == 2){
+				i = 0;
+				system("cls");
+			}
+			
+			else {
+			
+				cout << endl << endl;
+				i = 1;
+				cont_voltas++;
+			
+				if (cont_voltas >= 2){
+					system("cls");
+					cont_voltas = 0;
+				}
+			}
+		}
+	}
+}
